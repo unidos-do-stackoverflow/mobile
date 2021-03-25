@@ -11,3 +11,9 @@ export const Title = styled.Text`
 	color: black;
 	font-size: 24px;
 `;
+
+export const Butao = styled.TouchableOpacity`
+	background-color: red;
+	width: 50px;
+	height: 20px;
+`;
