@@ -3,3 +3,5 @@ type RootStackParamList = {
 	Register: undefined;
 	// Feed: { sort: 'latest' | 'top' } | undefined;
 };
+
+export default RootStackParamList;
