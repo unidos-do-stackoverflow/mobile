@@ -1,10 +1,9 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-	display: flex;
 	flex: 1;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 `;
 
 export const Title = styled.Text`
@@ -12,8 +11,15 @@ export const Title = styled.Text`
 	font-size: 24px;
 `;
 
-export const Butao = styled.TouchableOpacity`
-	background-color: red;
-	width: 50px;
-	height: 20px;
+export const Btn = styled.TouchableOpacity`
+	width: 200px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+`;
+
+export const BtnText = styled.Text`
+	color: white;
+	font-size: 18px;
 `;

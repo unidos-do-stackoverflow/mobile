@@ -1,13 +1,29 @@
 import React from 'react';
-import { Container, Title, Butao } from './styles';
+import { RouteProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Container, Title, Btn, BtnText } from './styles';
 
-export default function Login() {
+type LoginScreenRouteProp = RouteProp<RootStackParamList, 'Login'>;
+type LoginScreenNavigationProp = StackNavigationProp<
+	RootStackParamList,
+	'Login'
+>;
+
+type Props = {
+	route: LoginScreenRouteProp;
+	navigation: LoginScreenNavigationProp;
+};
+
+export default function Login({ route, navigation }: Props) {
+	function navigateToRegister() {
+		navigation.navigate('Register');
+	}
+
 	return (
 		<Container>
-			<Title>Login!</Title>
-			<Butao onPress={() => {}}>
-				<Title>teste</Title>
-			</Butao>
+			<Btn onPress={navigateToRegister}>
+				<BtnText>Criar uma nova conta</BtnText>
+			</Btn>
 		</Container>
 	);
 }
