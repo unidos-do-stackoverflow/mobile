@@ -1,6 +1,4 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import RootStackParamList from '../utils/RootStackParamList';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import {
 	MaterialCommunityIcons,
@@ -12,12 +10,11 @@ import TestScreen from '../pages/Main/TestScreen';
 import Screen2 from '../pages/Main/Screen2';
 import Screen1 from '../pages/Main/Screen1';
 
-const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createMaterialBottomTabNavigator();
 
 export default function Routes() {
 	return (
-		<Tab.Navigator>
+		<Tab.Navigator sceneAnimationEnabled={false}>
 			<Tab.Screen
 				name='Feed'
 				component={Screen1}
