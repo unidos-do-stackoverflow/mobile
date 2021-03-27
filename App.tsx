@@ -18,6 +18,7 @@ declare global {
 const theme = {
 	...DefaultTheme,
 	roundness: 2,
+	dark: true,
 	colors: {
 		...DefaultTheme.colors,
 		primary: '#fbc406',
