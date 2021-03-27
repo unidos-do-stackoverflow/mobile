@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Container, Title, Btn, BtnText } from './styles';
-import RootStackParamList from '../../utils/RootStackParamList';
+import RootStackParamList from '../../../utils/RootStackParamList';
 
 type RegisterScreenRouteProp = RouteProp<RootStackParamList, 'Register'>;
 type RegisterScreenNavigationProp = StackNavigationProp<

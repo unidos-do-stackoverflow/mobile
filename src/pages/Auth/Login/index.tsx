@@ -3,8 +3,9 @@ import { StyleSheet } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Container, InputFields, Footer } from './styles';
-import RootStackParamList from '../../utils/RootStackParamList';
+import RootStackParamList from '../../../utils/RootStackParamList';
 import { Avatar, TextInput, Button, Title } from 'react-native-paper';
+import { useAuth } from '../../../context/auth';
 
 type LoginScreenRouteProp = RouteProp<RootStackParamList, 'Login'>;
 type LoginScreenNavigationProp = StackNavigationProp<
@@ -19,6 +20,7 @@ type Props = {
 
 export default function Login({ route, navigation }: Props) {
 	const [text, setText] = React.useState('d');
+	const { signInUser } = useAuth();
 
 	function navigateToRegister() {
 		navigation.navigate('Register');
@@ -43,11 +45,7 @@ export default function Login({ route, navigation }: Props) {
 				/>
 			</InputFields>
 
-			<Button
-				icon='login'
-				mode='contained'
-				onPress={() => console.log('Pressed')}
-			>
+			<Button icon='login' mode='contained' onPress={signInUser}>
 				Fazer login
 			</Button>
 
