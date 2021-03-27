@@ -19,11 +19,17 @@ type Props = {
 };
 
 export default function Login({ route, navigation }: Props) {
-	const [text, setText] = React.useState('d');
+	const [email, setEmail] = React.useState('');
+	const [senha, setSenha] = React.useState('');
 	const { signInUser } = useAuth();
 
 	function navigateToRegister() {
 		navigation.navigate('Register');
+	}
+
+	function logarUsuario (){
+		console.warn(email+ " " +senha);
+		signInUser();
 	}
 
 	return (
@@ -33,19 +39,19 @@ export default function Login({ route, navigation }: Props) {
 			<InputFields>
 				<TextInput
 					label='E-mail'
-					value={text}
-					onChangeText={(text) => setText(text)}
+					value={email}
+					onChangeText={(text) => setEmail(text)}
 					mode='outlined'
 				/>
 				<TextInput
 					label='Senha'
-					value={text}
-					onChangeText={(text) => setText(text)}
+					value={senha}
+					onChangeText={(text) => setSenha(text)}
 					mode='outlined'
 				/>
 			</InputFields>
 
-			<Button icon='login' mode='contained' onPress={signInUser}>
+			<Button icon='login' mode='contained' onPress={logarUsuario}>
 				Fazer login
 			</Button>
 
