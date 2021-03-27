@@ -1,6 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import Routes from './src/routes';
+import { NavigationContainer } from '@react-navigation/native';
+import { AuthProvider } from './src/context/auth';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 declare global {
@@ -28,8 +30,12 @@ const theme = {
 
 export default function App() {
 	return (
-		<PaperProvider theme={theme}>
-			<Routes />
-		</PaperProvider>
+		<AuthProvider>
+			<NavigationContainer>
+				<PaperProvider theme={theme}>
+					<Routes />
+				</PaperProvider>
+			</NavigationContainer>
+		</AuthProvider>
 	);
 }
