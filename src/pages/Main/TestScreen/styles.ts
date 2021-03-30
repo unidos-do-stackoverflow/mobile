@@ -6,8 +6,7 @@ export const Container = styled.View`
 	background-color: #fff;
 `;
 
-export const ContainerHeader = styled.View`
-	flex : 1;
+export const ContainerHeader = styled.View`	
 	align-items: center;
 	text-align: center;
 `;
@@ -21,7 +20,7 @@ export const Title = styled.Text`
 
 export const TextDesc = styled.Text`
 	font-size: 15px;
-	margin: 3px 25px 5px 25px ;
+	margin: 3px 25px 4px 25px;
 	text-align: center;
 	font-weight: 400;
 `;
@@ -29,4 +28,41 @@ export const TextDesc = styled.Text`
 export const BottonEditarPerfil = styled.TouchableOpacity`
 `; 
 
+export const Btn = styled.TouchableOpacity`
+	text-align: center;
+`; 
+export const ContainerNum = styled.View`
+	margin: 7px 25px 5px 30px;
+	flex-direction: row;
+	justify-content: space-around;
+`;
+
+export const Box = styled.View`
+	width: 100px;
+	height: 70px;
+	padding: 5px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	
+`;
+export const ContainerAction = styled.View`	
+	margin: 2px 30px 5px 40px;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+`;
+
+export const BoxAction = styled.View`
+	width: 65px;
+	height: 64px;
+	background-color: #008282;
+	border-radius: 12px;
+	justify-content: center;
+	align-items: center;
+`;
+
+
+
+/* profile-pic */
 
