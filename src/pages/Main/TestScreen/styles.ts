@@ -2,7 +2,5 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
 	flex: 1;
-	justify-content: center;
-	align-items: center;
-	margin: 0px 20px;
+	margin: 0px 0px;
 `;
