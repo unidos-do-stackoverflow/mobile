@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Container, 
@@ -13,7 +13,7 @@ import { Container,
 	BoxAction,
 	Btn,
  } from './styles';
-import { MaterialCommunityIcons, FontAwesome5, Feather, MaterialIcons, AntDesign} from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons, AntDesign, Ionicons} from '@expo/vector-icons';
 import RootStackParamList from '../../../utils/RootStackParamList';
 import { Button, Appbar, Avatar, Text, Divider } from 'react-native-paper';
 import { useAuth } from '../../../context/auth';
@@ -74,11 +74,15 @@ export default function Login({ route, navigation }: Props) {
 	return (
 		<Container>
 			<Appbar.Header style={styles.headerStyle}>
-				<Appbar.BackAction style={{marginLeft: 10}} onPress={goBack}/>
-				<Appbar.Action icon="cog" style={{marginRight: 10}} onPress={signOutUser}/>
 			</Appbar.Header>
 			<ContainerHeader>
-				<Avatar.Image size={90} source={user.photo} style={{marginTop: 15}}/>
+				<TouchableOpacity onPress={config} style={styles.cogStyle}>
+					<MaterialCommunityIcons name="cog-outline" size={33} color="black" />
+				</TouchableOpacity>
+				<TouchableOpacity onPress={goBack} style={styles.backStyle}>
+					<Ionicons name="md-arrow-back-outline" size={33} color="black" />
+				</TouchableOpacity>
+				<Avatar.Image size={90} source={user.photo} style={{marginTop: 39}}/>
 				<Title>{user.name}</Title>
 				<TextDesc>{user.description}</TextDesc>
 				<BottonEditarPerfil onPress={editPerfil}>
@@ -163,6 +167,18 @@ const styles = StyleSheet.create({
 	},
 	headerStyle:{
 		justifyContent:'space-between',
-		backgroundColor: '#fff',
+		backgroundColor: '#3BB273',
+		height: 20,
 	},
+	cogStyle:{
+		position:'absolute',
+		right: 24,
+		top: 20,
+	},
+	backStyle:{
+		position: 'absolute',
+		left: 24,
+		top: 20,
+	},
+
 })
