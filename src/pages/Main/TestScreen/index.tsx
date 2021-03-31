@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Container, 
@@ -15,9 +15,10 @@ import { Container,
  } from './styles';
 import { MaterialCommunityIcons, FontAwesome5, Feather, MaterialIcons, AntDesign} from '@expo/vector-icons';
 import RootStackParamList from '../../../utils/RootStackParamList';
-import { Button, Appbar, Avatar, Text } from 'react-native-paper';
+import { Button, Appbar, Avatar, Text, Divider } from 'react-native-paper';
 import { useAuth } from '../../../context/auth';
-import { State } from 'react-native-gesture-handler';
+import { ScrollView, State } from 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type LoginScreenRouteProp = RouteProp<RootStackParamList, 'Login'>;
 type LoginScreenNavigationProp = StackNavigationProp<
@@ -42,18 +43,37 @@ export default function Login({ route, navigation }: Props) {
 		photo: require('../../../../assets/Anna_Clara.jpg'),
 		description: 'Mãe de 3 filhos, 32 anos, procurando ajuda e adoiando quando posso'
 	};
+	// Actions Links
 	const goBack = ()=> console.log('back action');
 	const config = ()=> console.log('settings');
 	const editPerfil = ()=> console.log ("editePerfil");
 	const childs = ()=> console.log ('childs');
 	const tickeds = ()=> console.log ('my tickeds');
-	const trophy = ()=> console.log('my rewards')
+	const trophy = ()=> console.log('my rewards');
+	
+	// Components for historic's user
+
+	const ComponenteDonation = ()=>{
+		return(
+			<View style={{padding: 20, borderStyle: 'solid', borderTopWidth: 0.7, borderTopColor: '#B0C4DE'}}>
+				<View style={{flexDirection: 'row', marginBottom: 5}}>
+					<MaterialCommunityIcons name="hand-heart" size={36} color="black" style={{marginRight:8}} />
+					<View>
+						<Text style={{fontWeight:'700', fontSize: 18}}>Doação de R$ 25,00</Text>
+						<Text style={{fontSize: 12, color: '#808080'}}>há 1 mês</Text>
+					</View>
+				</View>
+				<Text>Doação para Fulano de Tal, para contribuir com a compra de materiais escolares.</Text>
+			</View>
+		);
+	};
+
 
 	
 
 	return (
 		<Container>
-			<Appbar.Header style={{justifyContent:'space-between', backgroundColor: '#fff'}}>
+			<Appbar.Header style={styles.headerStyle}>
 				<Appbar.BackAction style={{marginLeft: 10}} onPress={goBack}/>
 				<Appbar.Action icon="cog" style={{marginRight: 10}} onPress={signOutUser}/>
 			</Appbar.Header>
@@ -110,6 +130,12 @@ export default function Login({ route, navigation }: Props) {
 				</Box>
 			</ContainerAction>
 			
+			<SafeAreaView style={styles.safeViewStyle}>
+				<ScrollView>
+					<ComponenteDonation/>					
+				</ScrollView>
+			</SafeAreaView>
+			
 		</Container>
 	);
 }
@@ -130,6 +156,13 @@ const styles = StyleSheet.create({
 		fontSize: 13,
 		fontWeight: '700',
 		textAlign: 'center',
-
-	}
+	},
+	safeViewStyle:{
+		flex: 1,
+		marginTop: 14,
+	},
+	headerStyle:{
+		justifyContent:'space-between',
+		backgroundColor: '#fff',
+	},
 })
