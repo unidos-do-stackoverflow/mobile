@@ -16,3 +16,8 @@ export const Btn = styled.TouchableOpacity`
 	color:white;
 	font-size:20px;
 `;
+
+export const BtnEnviar = styled.TouchableOpacity`
+	color:white;
+	font-size:20px;
+`;
