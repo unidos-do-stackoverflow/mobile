@@ -12,6 +12,7 @@ import { Container,
 	ContainerAction,
 	BoxAction,
 	Btn,
+	TagHelp,
  } from './styles';
 import { MaterialCommunityIcons, MaterialIcons, AntDesign, Ionicons} from '@expo/vector-icons';
 import RootStackParamList from '../../../utils/RootStackParamList';
@@ -67,6 +68,30 @@ export default function Login({ route, navigation }: Props) {
 			</View>
 		);
 	};
+
+	const ComponenteHelp = ()=>{
+		return(
+			<View style={{padding: 20, borderStyle: 'solid', borderTopWidth: 0.7, borderTopColor: '#B0C4DE'}}>
+				<View style={{flexDirection: 'row',justifyContent: 'space-between', marginBottom: 5}}>
+					<View style={{flexDirection: 'row'}}>
+						<Avatar.Image size={43} source={user.photo} style={{marginRight: 10}}/>
+						<View>
+							<Text style={{fontWeight:'700', fontSize: 18}}>{user.name}</Text>
+							<Text style={{fontSize: 12, color: '#808080'}}>há 20 min</Text>
+						</View>
+					</View>
+					<TagHelp><Text style={{color:'#fff', fontWeight: '700'}}>Pedido</Text></TagHelp>
+				</View>
+				<Text>
+					Meu pequeninho estudando ...
+
+					Bom dia gente, me chamo Anna clara, e estou  precisando de ajuda para custear 
+					os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceintando 
+					doações para poder custea-lo, obrigado :)
+				</Text>
+			</View>
+		);
+	}
 
 
 	
@@ -136,7 +161,10 @@ export default function Login({ route, navigation }: Props) {
 			
 			<SafeAreaView style={styles.safeViewStyle}>
 				<ScrollView>
-					<ComponenteDonation/>					
+					<ComponenteDonation/>
+					<ComponenteHelp/>
+					<ComponenteDonation/>
+					<ComponenteHelp/>			
 				</ScrollView>
 			</SafeAreaView>
 			

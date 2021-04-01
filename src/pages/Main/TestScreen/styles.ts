@@ -62,6 +62,16 @@ export const BoxAction = styled.View`
 	align-items: center;
 `;
 
+export const TagHelp = styled.View`
+	width: 74px;
+	height: 36px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 7px;
+	background-color: #DC3A3A;
+`;
+
 
 
 /* profile-pic */
