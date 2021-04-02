@@ -42,10 +42,16 @@ export default function Login({ route, navigation }: Props) {
 	const user = {
 		name: 'Anna Clara',
 		photo: require('../../../../assets/Anna_Clara.jpg'),
-		description: 'Mãe de 3 filhos, 32 anos, procurando ajuda e adoiando quando posso'
+		description: 'Mãe de 3 filhos, 32 anos, procurando ajuda e adoiando quando posso',
+		donation: [{date: '1 mês', value: '200.00', receptor: 'Joana Carvalho'}],		
+		help: [{date: '20 min', description:`
+		Meu pequeninho estudando ...
+		Bom dia gente, me chamo Anna clara, e estou  precisando de ajuda para custear 
+		os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceintando 
+		doações para poder custea-lo, obrigado :)`}],
 	};
 	// Actions Links
-	const goBack = ()=> console.log('back action');
+	const goBack = ()=> {'Go Back'};
 	const config = ()=> console.log('settings');
 	const editPerfil = ()=> console.log ("editePerfil");
 	const childs = ()=> console.log ('childs');
@@ -60,11 +66,11 @@ export default function Login({ route, navigation }: Props) {
 				<View style={{flexDirection: 'row', marginBottom: 5}}>
 					<MaterialCommunityIcons name="hand-heart" size={36} color="black" style={{marginRight:8}} />
 					<View>
-						<Text style={{fontWeight:'700', fontSize: 18}}>Doação de R$ 25,00</Text>
-						<Text style={{fontSize: 12, color: '#808080'}}>há 1 mês</Text>
+						<Text style={{fontWeight:'700', fontSize: 18}}>Doação de {user.donation[0].value}</Text>
+						<Text style={{fontSize: 12, color: '#808080'}}>há {user.donation[0].date}</Text>
 					</View>
 				</View>
-				<Text>Doação para Fulano de Tal, para contribuir com a compra de materiais escolares.</Text>
+				<Text>Doação para {user.donation[0].receptor}, para contribuir com a compra de materiais escolares.</Text>
 			</View>
 		);
 	};
@@ -77,17 +83,13 @@ export default function Login({ route, navigation }: Props) {
 						<Avatar.Image size={43} source={user.photo} style={{marginRight: 10}}/>
 						<View>
 							<Text style={{fontWeight:'700', fontSize: 18}}>{user.name}</Text>
-							<Text style={{fontSize: 12, color: '#808080'}}>há 20 min</Text>
+							<Text style={{fontSize: 12, color: '#808080'}}>há {user.help[0].date}</Text>
 						</View>
 					</View>
 					<TagHelp><Text style={{color:'#fff', fontWeight: '700'}}>Pedido</Text></TagHelp>
 				</View>
-				<Text>
-					Meu pequeninho estudando ...
-
-					Bom dia gente, me chamo Anna clara, e estou  precisando de ajuda para custear 
-					os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceintando 
-					doações para poder custea-lo, obrigado :)
+				<Text style={{textAlign: 'auto'}}>
+					{user.help[0].description}
 				</Text>
 			</View>
 		);
@@ -104,7 +106,7 @@ export default function Login({ route, navigation }: Props) {
 				<TouchableOpacity onPress={config} style={styles.cogStyle}>
 					<MaterialCommunityIcons name="cog-outline" size={33} color="black" />
 				</TouchableOpacity>
-				<TouchableOpacity onPress={goBack} style={styles.backStyle}>
+				<TouchableOpacity onPress={signOutUser} style={styles.backStyle}>
 					<Ionicons name="md-arrow-back-outline" size={33} color="black" />
 				</TouchableOpacity>
 				<Avatar.Image size={90} source={user.photo} style={{marginTop: 39}}/>
