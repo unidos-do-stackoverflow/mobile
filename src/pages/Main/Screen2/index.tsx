@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Image } from 'react-native';
 import { Text, TextInput } from 'react-native-paper';
 import { Container, Btn, BtnEnviar } from './styles';
@@ -11,14 +11,13 @@ interface Props {
 }
 
 export default function Post({ nameUser, count, content }: Props) {
-	//Like
-	const [like, setLike] = React.useState(0);
+	const [like, setLike] = useState(0);
 	const increment = () => {
 		setLike(like + 1);
 	};
-	//Comentários
+
 	const allComents = [];
-	const [comments, setComments] = React.useState('');
+	const [comments, setComments] = useState('');
 	const sumComments = () => {
 		allComents.push(' ');
 	};
