@@ -30,9 +30,9 @@ const theme = {
 	},
 };
 
-setStatusBarBackgroundColor('#3bb273', true);
-
 export default function App() {
+	setStatusBarBackgroundColor('#3bb273', true);
+
 	return (
 		<SafeAreaProvider>
 			<SafeAreaView
