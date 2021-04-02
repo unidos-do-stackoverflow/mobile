@@ -7,8 +7,9 @@ import {
 } from '@expo/vector-icons';
 
 import TestScreen from '../pages/Main/TestScreen';
-import Post from '../pages/Main/Post';
 import Screen1 from '../pages/Main/Screen1';
+import Feed from '../pages/Main/Feed';
+import Donation from '../pages/Main/Donation';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -17,7 +18,7 @@ export default function Routes() {
 		<Tab.Navigator sceneAnimationEnabled={false}>
 			<Tab.Screen
 				name='Feed'
-				component={Screen1}
+				component={Feed}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<MaterialCommunityIcons name='post' size={24} color='white' />
@@ -26,7 +27,7 @@ export default function Routes() {
 			/>
 			<Tab.Screen
 				name='Doação'
-				component={Post}
+				component={Donation}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<FontAwesome5 name='donate' size={24} color='white' />
