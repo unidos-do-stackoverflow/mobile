@@ -1,44 +1,55 @@
 import React, { useState } from 'react';
-import { Text, TextInput } from 'react-native-paper';
-import { Container, Btn, BtnEnviar } from './styles';
+import { Text, TextInput, Avatar } from 'react-native-paper';
+import {
+	Container,
+	Timestamp,
+	UserInfo,
+	PostHeader,
+	PostDescription,
+	VerticalWrapper,
+	PostPicture,
+} from './styles';
+import Tag from './Tag';
+
+import BoyStudying from '../../../assets/boy-studying-1.jpg';
 
 interface Props {
-	nameUser: string;
-	count: number;
-	file: string;
+	username: string;
 	content: string;
+	date: number;
 }
 
-export default function Post({ nameUser, count, content }: Props) {
-	const [like, setLike] = useState(0);
-	const increment = () => {
-		setLike(like + 1);
-	};
-
-	const allComents = [];
-	const [comments, setComments] = useState('');
-	const sumComments = () => {
-		allComents.push(' ');
+export default function Post({ username, content, date }: Props) {
+	const user = {
+		name: username,
+		photo: require('../../../assets/woman-1.jpg'),
+		description:
+			'Mãe de 3 filhos, 32 anos, procurando ajuda e adoiando quando posso',
+		donation: [{ date: '1 mês', value: '200.00', receptor: 'Joana Carvalho' }],
 	};
 
 	return (
 		<Container>
-			<Text>{nameUser}</Text>
-
-			<Text> Há {count} min</Text>
-
-			<Text>{content}</Text>
-
-			<Text>{like}</Text>
-			<Btn onPress={increment}>
-				<Text>Apoiar</Text>
-			</Btn>
-
-			{/* <TextInput value={comments} onChangeText={(text) => setComments(text)} /> */}
-			<BtnEnviar onPress={sumComments}>
-				<Text>Enviar</Text>
-			</BtnEnviar>
-			<Text>{allComents.length} Comentários</Text>
+			<PostHeader>
+				<UserInfo>
+					<Avatar.Image
+						size={43}
+						source={user.photo}
+						style={{ marginRight: 10 }}
+					/>
+					<VerticalWrapper>
+						<Text style={{ fontWeight: '700', fontSize: 18 }}>{username}</Text>
+						{/* TODO: fazer tratamento da timestamp passada aqui */}
+						<Timestamp>há {date} min</Timestamp>
+					</VerticalWrapper>
+				</UserInfo>
+				<Tag type='request' text='Pedido' />
+			</PostHeader>
+			<PostDescription>{content}</PostDescription>
+			<PostPicture
+				source={BoyStudying}
+				style={{ resizeMode: 'cover' }}
+			></PostPicture>
 		</Container>
 	);
 }
