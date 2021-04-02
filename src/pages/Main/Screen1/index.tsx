@@ -1,35 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Text } from './styles';
-
+import React from 'react';
+import { View} from 'react-native';
+import { Container, ContainerTitle, TextTitle, ContainerDescription, Text, TextBold } from './styles';
 
 export default function Screen1() {
-
-	const [children, setChildren] = useState([{} as any]);
-
-	useEffect(() => {
-		// requisição de API
-		setChildren([
-			{
-				name: 'Maria',
-				photo: 'http//...'
-			},
-			{
-				name: 'João',
-				photo: 'http//...'
-			}
-		]) 
-	}, [])
-
+	
 
 	return (
 	
 	<Container>
 
-		<Text>Pedido de doação</Text>
-		<Text>{children[0].name}</Text>
-		
+		<ContainerTitle> 
+
+			<TextTitle>PEDIDO DE DOAÇÃO</TextTitle>
+
+		</ContainerTitle>
+
+		<ContainerDescription>
+			<Text>Você ainda não possui nenhuma criança cadastrada :( </Text>
+			<TextBold>Registre abaixo para prosseguir com o pedido de doação</TextBold>
+		</ContainerDescription>
 
 	</Container>
-	
-	);
+	);		
 }
