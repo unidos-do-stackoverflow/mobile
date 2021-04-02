@@ -7,11 +7,14 @@ import {
 	PostHeader,
 	PostDescription,
 	VerticalWrapper,
+	PostPictureContainer,
 	PostPicture,
+	PostList,
 } from './styles';
 import Tag from './Tag';
 
 import BoyStudying from '../../../assets/boy-studying-1.jpg';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 interface Props {
 	username: string;
@@ -46,10 +49,15 @@ export default function Post({ username, content, date }: Props) {
 				<Tag type='request' text='Pedido' />
 			</PostHeader>
 			<PostDescription>{content}</PostDescription>
-			<PostPicture
-				source={BoyStudying}
-				style={{ resizeMode: 'cover' }}
-			></PostPicture>
+			<PostPictureContainer>
+				<PostPicture
+					source={BoyStudying}
+					style={{ resizeMode: 'cover' }}
+				></PostPicture>
+				<PostList>
+					<FontAwesome5 name='clipboard-list' size={24} color='#404040' />
+				</PostList>
+			</PostPictureContainer>
 		</Container>
 	);
 }

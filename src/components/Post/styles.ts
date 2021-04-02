@@ -44,8 +44,26 @@ export const PostDescription = styled.Text`
 
 export const VerticalWrapper = styled.View``;
 
+export const PostPictureContainer = styled.View`
+	position: relative;
+`;
+
 export const PostPicture = styled.Image`
 	margin: 0px -15px; /* overrides 15px padding from parent component */
 	width: auto;
 	height: 350px;
+`;
+
+export const PostList = styled.TouchableOpacity`
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	bottom: 20px;
+	right: 0px;
+	background-color: whitesmoke;
+	position: absolute;
+	border-radius: 7px;
+	border-color: black;
+	border-width: 1px;
 `;
