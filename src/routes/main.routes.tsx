@@ -7,7 +7,7 @@ import {
 } from '@expo/vector-icons';
 
 import TestScreen from '../pages/Main/TestScreen';
-import Screen2 from '../pages/Main/Screen2';
+import Post from '../pages/Main/Post';
 import Screen1 from '../pages/Main/Screen1';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -26,7 +26,7 @@ export default function Routes() {
 			/>
 			<Tab.Screen
 				name='Doação'
-				component={Screen2}
+				component={Post}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<FontAwesome5 name='donate' size={24} color='white' />
