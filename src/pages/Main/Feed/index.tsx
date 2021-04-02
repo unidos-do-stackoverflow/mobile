@@ -33,10 +33,10 @@ export default function Feed() {
 			</LocationContainer>
 			<Post
 				username={'Juliana Mazini'}
-				content={`Meu pequeninho estudando ...
-				Bom dia gente, me chamo Anna clara, e estou  precisando de ajuda para custear 
-				os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceintando 
-				doações para poder custea-lo, obrigado :)`}
+				date={20}
+				content={`Meu pequeninho estudando...
+
+Bom dia gente, me chamo Juliana Mazini, e estou precisando de ajuda para custear os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceitando doações para poder custeá-lo, obrigada :)`}
 			/>
 		</Container>
 	);
