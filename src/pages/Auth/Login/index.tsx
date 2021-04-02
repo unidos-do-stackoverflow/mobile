@@ -27,8 +27,7 @@ export default function Login({ route, navigation }: Props) {
 		navigation.navigate('Register');
 	}
 
-	function logarUsuario (){
-		console.warn(email+ " " +senha);
+	function logarUsuario() {
 		signInUser();
 	}
 
