@@ -57,8 +57,8 @@ export const PostPicture = styled.Image`
 export const PostList = styled.TouchableOpacity`
 	justify-content: center;
 	align-items: center;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	bottom: 20px;
 	right: 0px;
 	background-color: whitesmoke;
@@ -66,4 +66,47 @@ export const PostList = styled.TouchableOpacity`
 	border-radius: 7px;
 	border-color: black;
 	border-width: 1px;
+`;
+
+export const DonationContainer = styled.TouchableOpacity`
+	flex-direction: row;
+	justify-content: space-between;
+	height: 44px;
+`;
+
+export const DonationDueDateContainer = styled.View`
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 60px;
+`;
+
+export const DonationDueDateText = styled.Text`
+	font-size: 14px;
+`;
+
+export const DonationProgressContainer = styled.View`
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 210px;
+	/* background-color: red; */
+`;
+
+export const DonationProgressText = styled.Text`
+	font-size: 14px;
+`;
+
+export const DonationProgressBar = styled.View`
+	width: 130px;
+	height: 8px;
+	background-color: #afafaf;
+	border-radius: 4px;
+`;
+
+export const ProgressFill = styled.View`
+	width: 100px;
+	height: 8px;
+	background-color: #3bb273;
+	border-radius: 4px;
 `;

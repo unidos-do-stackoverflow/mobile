@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, Avatar } from 'react-native-paper';
+import { Text, Avatar } from 'react-native-paper';
 import {
 	Container,
 	Timestamp,
@@ -10,11 +10,19 @@ import {
 	PostPictureContainer,
 	PostPicture,
 	PostList,
+	DonationContainer,
+	DonationDueDateContainer,
+	DonationDueDateText,
+	DonationProgressContainer,
+	DonationProgressBar,
+	ProgressFill,
+	DonationProgressText,
 } from './styles';
 import Tag from './Tag';
 
 import BoyStudying from '../../../assets/boy-studying-1.jpg';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 interface Props {
 	username: string;
@@ -55,9 +63,24 @@ export default function Post({ username, content, date }: Props) {
 					style={{ resizeMode: 'cover' }}
 				></PostPicture>
 				<PostList>
-					<FontAwesome5 name='clipboard-list' size={24} color='#404040' />
+					<FontAwesome5 name='clipboard-list' size={20} color='#404040' />
 				</PostList>
 			</PostPictureContainer>
+
+			<DonationContainer>
+				<DonationDueDateContainer>
+					<Feather name='calendar' size={20} color='#404040' />
+					<DonationDueDateText>14/02</DonationDueDateText>
+				</DonationDueDateContainer>
+
+				<DonationProgressContainer>
+					<DonationProgressBar>
+						<ProgressFill />
+					</DonationProgressBar>
+					<FontAwesome5 name='hand-holding-heart' size={20} color='#404040' />
+					<DonationProgressText>65%</DonationProgressText>
+				</DonationProgressContainer>
+			</DonationContainer>
 		</Container>
 	);
 }
