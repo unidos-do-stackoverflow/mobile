@@ -6,3 +6,18 @@ export const Container = styled.View`
 	align-items: center;
 	background-color: #4ca77b;
 `;
+
+export const InputFields = styled.View`
+	margin: 10px 0;
+	height: 300px;
+`;
+
+export const Btn = styled.TouchableOpacity`
+	color:white;
+	font-size:20px;
+`;
+
+export const BtnEnviar = styled.TouchableOpacity`
+	color:white;
+	font-size:20px;
+`;
