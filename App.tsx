@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import Routes from './src/routes';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthProvider } from './src/context/auth';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
@@ -24,18 +25,26 @@ const theme = {
 	colors: {
 		...DefaultTheme.colors,
 		primary: '#fbc406',
-		accent: 'red',
+		accent: 'blue',
 	},
 };
 
 export default function App() {
 	return (
-		<AuthProvider>
-			<NavigationContainer>
-				<PaperProvider theme={theme}>
-					<Routes />
-				</PaperProvider>
-			</NavigationContainer>
-		</AuthProvider>
+		<SafeAreaProvider>
+			<SafeAreaView
+				style={{
+					flex: 1,
+				}}
+			>
+				<AuthProvider>
+					<NavigationContainer>
+						<PaperProvider theme={theme}>
+							<Routes />
+						</PaperProvider>
+					</NavigationContainer>
+				</AuthProvider>
+			</SafeAreaView>
+		</SafeAreaProvider>
 	);
 }
