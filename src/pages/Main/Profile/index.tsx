@@ -166,7 +166,6 @@ doações para poder custea-lo, obrigado :)`,
 	function MainProfile() {
 		return (
 			<>
-				<Appbar.Header style={styles.headerStyle}></Appbar.Header>
 				<SafeAreaView>
 					<ScrollView>
 						<ContainerHeader>
