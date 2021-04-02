@@ -166,8 +166,7 @@ doações para poder custea-lo, obrigado :)`,
 	function MainProfile() {
 		return (
 			<>
-				<Appbar.Header style={styles.headerStyle}>					
-				</Appbar.Header>
+				<Appbar.Header style={styles.headerStyle}></Appbar.Header>
 				<SafeAreaView>
 					<ScrollView>
 						<ContainerHeader>
@@ -179,7 +178,11 @@ doações para poder custea-lo, obrigado :)`,
 								/>
 							</TouchableOpacity>
 							<TouchableOpacity onPress={signOutUser} style={styles.backStyle}>
-								<Ionicons name='md-arrow-back-outline' size={33} color='black' />
+								<Ionicons
+									name='md-arrow-back-outline'
+									size={33}
+									color='black'
+								/>
 							</TouchableOpacity>
 							<Avatar.Image
 								size={90}
@@ -190,7 +193,11 @@ doações para poder custea-lo, obrigado :)`,
 							<TextDesc>{user.description}</TextDesc>
 							<BottonEditarPerfil onPress={editPerfil}>
 								<Text
-									style={{ color: '#808080', fontSize: 15, fontStyle: 'italic' }}
+									style={{
+										color: '#808080',
+										fontSize: 15,
+										fontStyle: 'italic',
+									}}
 								>
 									Editar perfil
 								</Text>
@@ -252,7 +259,7 @@ doações para poder custea-lo, obrigado :)`,
 								<ComponenteHelp />
 								<ComponenteDonation />
 								<ComponenteHelp />
-								<ComponenteDonation/>
+								<ComponenteDonation />
 							</View>
 						</View>
 					</ScrollView>
