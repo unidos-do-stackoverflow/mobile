@@ -26,6 +26,15 @@ export default function Feed() {
 
 Bom dia gente, me chamo Juliana Mazini, e estou precisando de ajuda para custear os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceitando doações para poder custeá-lo, obrigada :)`,
 		},
+
+		{
+			id: 'bd7acbae-c1b1-46c2-aed5-3ad53abb28ba',
+			username: 'Juliana Mazini',
+			date: 20,
+			content: `Meu pequeninho estudando...
+
+Bom dia gente, me chamo Juliana Mazini, e estou precisando de ajuda para custear os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceitando doações para poder custeá-lo, obrigada :)`,
+		},
 	];
 
 	const renderPost: ListRenderItem<IPostProps> = ({ item }) => {
