@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, Avatar } from 'react-native-paper';
 import {
 	Container,
@@ -17,20 +17,24 @@ import {
 	DonationProgressBar,
 	ProgressFill,
 	DonationProgressText,
+	PostFooter,
+	ReactionsContainer,
+	CommentsContainer,
+	CommentsText,
+	ReactionEmoji,
+	ReactionEmojiCount,
+	EmojiWrapper,
 } from './styles';
 import Tag from './Tag';
 
 import BoyStudying from '../../../assets/boy-studying-1.jpg';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
-interface Props {
-	username: string;
-	content: string;
-	date: number;
-}
+import IPostProps from './interfaces/IPostProps';
 
-export default function Post({ username, content, date }: Props) {
+export default function Post({ username, content, date }: IPostProps) {
 	const user = {
 		name: username,
 		photo: require('../../../assets/woman-1.jpg'),
@@ -38,6 +42,24 @@ export default function Post({ username, content, date }: Props) {
 			'Mãe de 3 filhos, 32 anos, procurando ajuda e adoiando quando posso',
 		donation: [{ date: '1 mês', value: '200.00', receptor: 'Joana Carvalho' }],
 	};
+
+	interface IEmojiProps {
+		whichEmoji: string;
+	}
+
+	function Emoji({ whichEmoji }: IEmojiProps) {
+		const currentReactions = 12;
+		const [reacted, setReacted] = useState(false);
+
+		return (
+			<EmojiWrapper reacted={reacted} onPress={() => setReacted(!reacted)}>
+				<ReactionEmoji>️{whichEmoji}</ReactionEmoji>
+				<ReactionEmojiCount>
+					{reacted ? currentReactions + 1 : currentReactions}
+				</ReactionEmojiCount>
+			</EmojiWrapper>
+		);
+	}
 
 	return (
 		<Container>
@@ -81,6 +103,19 @@ export default function Post({ username, content, date }: Props) {
 					<DonationProgressText>65%</DonationProgressText>
 				</DonationProgressContainer>
 			</DonationContainer>
+
+			<PostFooter>
+				<ReactionsContainer>
+					<Emoji whichEmoji='❤️' />
+					<Emoji whichEmoji='🎉' />
+					<Emoji whichEmoji='🚶' />
+				</ReactionsContainer>
+
+				<CommentsContainer>
+					<Ionicons name='chatbox-outline' size={20} color='#404040' />
+					<CommentsText>12 comentários</CommentsText>
+				</CommentsContainer>
+			</PostFooter>
 		</Container>
 	);
 }
