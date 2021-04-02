@@ -6,7 +6,7 @@ import {
 	Feather,
 } from '@expo/vector-icons';
 
-import TestScreen from '../pages/Main/TestScreen';
+import TestScreen from '../pages/Main/Profile';
 import Screen2 from '../pages/Main/Screen2';
 import Screen1 from '../pages/Main/Screen1';
 
