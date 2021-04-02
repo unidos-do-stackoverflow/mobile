@@ -1,7 +1,17 @@
 import React from 'react';
-import { Container, Header, HeaderTitle } from './styles';
+import {
+	Container,
+	Header,
+	HeaderTitle,
+	LocationContainer,
+	Location,
+	IconTextWrapper,
+} from './styles';
 import Post from '../../../components/Post';
+
+// Icons
 import { AntDesign } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 export default function Feed() {
 	return (
@@ -15,6 +25,12 @@ export default function Feed() {
 					style={{ marginRight: 20 }}
 				/>
 			</Header>
+			<LocationContainer>
+				<IconTextWrapper>
+					<Entypo name='location-pin' size={22} color='black' />
+					<Location>Santos, SP</Location>
+				</IconTextWrapper>
+			</LocationContainer>
 			<Post
 				username={'Juliana Mazini'}
 				content={`Meu pequeninho estudando ...
