@@ -79,7 +79,7 @@ export const DonationDueDateContainer = styled.View`
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
-	width: 50%;
+	width: 45%;
 `;
 
 export const DonationDueDateText = styled.Text`
@@ -89,9 +89,9 @@ export const DonationDueDateText = styled.Text`
 
 export const DonationProgressContainer = styled.View`
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	align-items: center;
-	width: 50%;
+	width: 55%;
 `;
 
 export const DonationProgressText = styled.Text`
