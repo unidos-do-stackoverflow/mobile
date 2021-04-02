@@ -26,10 +26,6 @@ export const TextTitle = styled.Text`
 	font-size: 20px;
 `
 
-export const ContainerDescription = styled.View`
-	flex-direction: column;
-`
-
 export const Text = styled.Text`
 	width: 231px;
 	font-family: Roboto;
@@ -52,4 +48,11 @@ export const TextBold = styled.Text`
 	text-align: center;
 	color: #000000;
 	font-weight: bold;
+`
+
+export const ContainerIcon = styled.View`
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 40px;
 `
