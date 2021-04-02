@@ -1,6 +1,7 @@
 import React from 'react';
 import { View} from 'react-native';
-import { Container, ContainerTitle, TextTitle, ContainerDescription, Text, TextBold } from './styles';
+import { Container, ContainerTitle, TextTitle, ContainerIcon, Text, TextBold } from './styles';
+import { Ionicons } from '@expo/vector-icons'; 
 
 export default function Screen1() {
 	
@@ -15,10 +16,14 @@ export default function Screen1() {
 
 		</ContainerTitle>
 
-		<ContainerDescription>
+		<View>
 			<Text>Você ainda não possui nenhuma criança cadastrada :( </Text>
 			<TextBold>Registre abaixo para prosseguir com o pedido de doação</TextBold>
-		</ContainerDescription>
+			<ContainerIcon>
+				<Ionicons name="md-person-add-sharp" size={24} color="black" />
+			</ContainerIcon>
+
+		</View>
 
 	</Container>
 	);		
