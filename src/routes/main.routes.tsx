@@ -4,12 +4,12 @@ import {
 	MaterialCommunityIcons,
 	FontAwesome5,
 	Feather,
+	FontAwesome,
 } from '@expo/vector-icons';
 
-import TestScreen from '../pages/Main/TestScreen';
-import Screen1 from '../pages/Main/Screen1';
 import Feed from '../pages/Main/Feed';
 import Donation from '../pages/Main/Donation';
+import Profile from '../pages/Main/Profile';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -35,11 +35,11 @@ export default function Routes() {
 				}}
 			/>
 			<Tab.Screen
-				name='Configurações'
-				component={TestScreen}
+				name='Perfil'
+				component={Profile}
 				options={{
 					tabBarIcon: ({ color }) => (
-						<Feather name='settings' size={24} color='white' />
+						<FontAwesome name='user' size={24} color='white' />
 					),
 				}}
 			/>
