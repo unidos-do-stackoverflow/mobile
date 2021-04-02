@@ -60,11 +60,10 @@ export default function Profile({ route, navigation }: Props) {
 		help: [
 			{
 				date: '20 min',
-				description: `
-		Meu pequeninho estudando ...
-		Bom dia gente, me chamo Anna clara, e estou  precisando de ajuda para custear 
-		os estudos do meu filho. Por favor, se alguém puder colaborar, estou aceintando 
-		doações para poder custea-lo, obrigado :)`,
+				description: `Meu pequeninho estudando ...
+Bom dia gente, me chamo Anna clara, e estou  precisando de ajuda para custear 
+estudos do meu filho. Por favor, se alguém puder colaborar, estou aceintando 
+doações para poder custea-lo, obrigado :)`,
 			},
 		],
 	};
@@ -167,89 +166,95 @@ export default function Profile({ route, navigation }: Props) {
 	function MainProfile() {
 		return (
 			<>
-				<Appbar.Header style={styles.headerStyle}></Appbar.Header>
-				<ContainerHeader>
-					<TouchableOpacity onPress={config} style={styles.cogStyle}>
-						<MaterialCommunityIcons
-							name='cog-outline'
-							size={33}
-							color='black'
-						/>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={signOutUser} style={styles.backStyle}>
-						<Ionicons name='md-arrow-back-outline' size={33} color='black' />
-					</TouchableOpacity>
-					<Avatar.Image
-						size={90}
-						source={user.photo}
-						style={{ marginTop: 39 }}
-					/>
-					<Title>{user.name}</Title>
-					<TextDesc>{user.description}</TextDesc>
-					<BottonEditarPerfil onPress={editPerfil}>
-						<Text
-							style={{ color: '#808080', fontSize: 15, fontStyle: 'italic' }}
-						>
-							Editar perfil
-						</Text>
-					</BottonEditarPerfil>
-				</ContainerHeader>
-				<ContainerNum>
-					<Box>
-						<Text style={styles.infoStyle}>Doações</Text>
-						<Text style={styles.numStyle}>{numOfDonations}</Text>
-					</Box>
-					<Box>
-						<Text style={styles.infoStyle}>Amigos</Text>
-						<Text style={styles.numStyle}>{numOfFriends}</Text>
-					</Box>
-					<Box>
-						<Text style={styles.infoStyle}>Pedidos</Text>
-						<Text style={styles.numStyle}>{numOfHelp}</Text>
-					</Box>
-				</ContainerNum>
-				<ContainerAction style={{}}>
-					<Box>
-						<Btn onPress={navigateToChildren}>
-							<BoxAction>
-								<MaterialIcons
-									name='child-care'
-									size={36}
-									color='#fff'
-									style={{ textAlign: 'center' }}
-								/>
-							</BoxAction>
-						</Btn>
-						<Text style={styles.textStyle}>Crianças</Text>
-					</Box>
-					<Box>
-						<Btn onPress={navigateToVouchers}>
-							<BoxAction>
-								<MaterialCommunityIcons
-									name='ticket-percent-outline'
-									size={36}
-									color='#fff'
-								/>
-							</BoxAction>
-						</Btn>
-						<Text style={styles.textStyle}>Cupons</Text>
-					</Box>
-					<Box>
-						<Btn onPress={navigateToRewards}>
-							<BoxAction>
-								<AntDesign name='Trophy' size={36} color='#fff' />
-							</BoxAction>
-						</Btn>
-						<Text style={styles.textStyle}>Recompensas</Text>
-					</Box>
-				</ContainerAction>
-
-				<SafeAreaView style={styles.safeViewStyle}>
+				<Appbar.Header style={styles.headerStyle}>					
+				</Appbar.Header>
+				<SafeAreaView>
 					<ScrollView>
-						<ComponenteDonation />
-						<ComponenteHelp />
-						<ComponenteDonation />
-						<ComponenteHelp />
+						<ContainerHeader>
+							<TouchableOpacity onPress={config} style={styles.cogStyle}>
+								<MaterialCommunityIcons
+									name='cog-outline'
+									size={33}
+									color='black'
+								/>
+							</TouchableOpacity>
+							<TouchableOpacity onPress={signOutUser} style={styles.backStyle}>
+								<Ionicons name='md-arrow-back-outline' size={33} color='black' />
+							</TouchableOpacity>
+							<Avatar.Image
+								size={90}
+								source={user.photo}
+								style={{ marginTop: 39 }}
+							/>
+							<Title>{user.name}</Title>
+							<TextDesc>{user.description}</TextDesc>
+							<BottonEditarPerfil onPress={editPerfil}>
+								<Text
+									style={{ color: '#808080', fontSize: 15, fontStyle: 'italic' }}
+								>
+									Editar perfil
+								</Text>
+							</BottonEditarPerfil>
+						</ContainerHeader>
+						<ContainerNum>
+							<Box>
+								<Text style={styles.infoStyle}>Doações</Text>
+								<Text style={styles.numStyle}>{numOfDonations}</Text>
+							</Box>
+							<Box>
+								<Text style={styles.infoStyle}>Amigos</Text>
+								<Text style={styles.numStyle}>{numOfFriends}</Text>
+							</Box>
+							<Box>
+								<Text style={styles.infoStyle}>Pedidos</Text>
+								<Text style={styles.numStyle}>{numOfHelp}</Text>
+							</Box>
+						</ContainerNum>
+						<ContainerAction style={{}}>
+							<Box>
+								<Btn onPress={navigateToChildren}>
+									<BoxAction>
+										<MaterialIcons
+											name='child-care'
+											size={36}
+											color='#fff'
+											style={{ textAlign: 'center' }}
+										/>
+									</BoxAction>
+								</Btn>
+								<Text style={styles.textStyle}>Crianças</Text>
+							</Box>
+							<Box>
+								<Btn onPress={navigateToVouchers}>
+									<BoxAction>
+										<MaterialCommunityIcons
+											name='ticket-percent-outline'
+											size={36}
+											color='#fff'
+										/>
+									</BoxAction>
+								</Btn>
+								<Text style={styles.textStyle}>Cupons</Text>
+							</Box>
+							<Box>
+								<Btn onPress={navigateToRewards}>
+									<BoxAction>
+										<AntDesign name='Trophy' size={36} color='#fff' />
+									</BoxAction>
+								</Btn>
+								<Text style={styles.textStyle}>Recompensas</Text>
+							</Box>
+						</ContainerAction>
+
+						<View style={styles.safeViewStyle}>
+							<View>
+								<ComponenteDonation />
+								<ComponenteHelp />
+								<ComponenteDonation />
+								<ComponenteHelp />
+								<ComponenteDonation/>
+							</View>
+						</View>
 					</ScrollView>
 				</SafeAreaView>
 			</>
@@ -306,6 +311,7 @@ const styles = StyleSheet.create({
 	safeViewStyle: {
 		flex: 1,
 		marginTop: 14,
+		marginBottom: 50,
 	},
 	headerStyle: {
 		justifyContent: 'space-between',
