@@ -8,13 +8,26 @@ import {
 	IconTextWrapper,
 } from './styles';
 import Post from '../../../components/Post';
+import { RouteProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { FlatList, ListRenderItem } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // Icons
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
 import IPostProps from '../../../components/Post/interfaces/IPostProps';
+import PayDonation from '../PayDonation';
+import RootStackParamList from '../../../utils/RootStackParamList';
+
+type FeedScreenRouteProp = RouteProp<RootStackParamList, 'Feed'>;
+type FeedScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Feed'>;
+
+type Props = {
+	route: FeedScreenRouteProp;
+	navigation: FeedScreenNavigationProp;
+};
 
 export default function Feed() {
 	const DATA = [
@@ -42,7 +55,10 @@ Bom dia gente, me chamo Juliana Mazini, e estou precisando de ajuda para custear
 		return <Post username={username} content={content} date={date} />;
 	};
 
-	return (
+	// Internal Stack navigation
+	const FeedStack = createStackNavigator();
+
+	const FeedItself = () => (
 		<Container>
 			<Header>
 				<HeaderTitle>Lápis e Borracha</HeaderTitle>
@@ -66,5 +82,21 @@ Bom dia gente, me chamo Juliana Mazini, e estou precisando de ajuda para custear
 				keyExtractor={(item) => item.id}
 			/>
 		</Container>
+	);
+
+	return (
+		<FeedStack.Navigator>
+			<FeedStack.Screen
+				name='Main'
+				component={FeedItself}
+				options={{ headerShown: false }}
+			/>
+
+			<FeedStack.Screen
+				name='PayDonation'
+				component={PayDonation}
+				options={{ headerShown: false }}
+			/>
+		</FeedStack.Navigator>
 	);
 }
