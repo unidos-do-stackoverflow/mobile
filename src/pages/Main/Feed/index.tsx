@@ -20,6 +20,8 @@ import { Entypo } from '@expo/vector-icons';
 import IPostProps from '../../../components/Post/interfaces/IPostProps';
 import PayDonation from '../PayDonation';
 import RootStackParamList from '../../../utils/RootStackParamList';
+import PayDonation2 from '../PayDonation2';
+import PayDonation3 from '../PayDonation3';
 
 type FeedScreenRouteProp = RouteProp<RootStackParamList, 'Feed'>;
 type FeedScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Feed'>;
@@ -95,6 +97,18 @@ Bom dia gente, me chamo Juliana Mazini, e estou precisando de ajuda para custear
 			<FeedStack.Screen
 				name='PayDonation'
 				component={PayDonation}
+				options={{ headerShown: false }}
+			/>
+
+			<FeedStack.Screen
+				name='PayDonation2'
+				component={PayDonation2}
+				options={{ headerShown: false }}
+			/>
+
+			<FeedStack.Screen
+				name='PayDonation3'
+				component={PayDonation3}
 				options={{ headerShown: false }}
 			/>
 		</FeedStack.Navigator>

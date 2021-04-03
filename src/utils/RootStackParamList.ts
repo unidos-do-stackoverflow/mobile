@@ -7,6 +7,8 @@ type RootStackParamList = {
 	Vouchers: undefined;
 	Feed: undefined;
 	PayDonation: undefined;
+	PayDonation2: undefined;
+	PayDonation3: undefined;
 	// Feed: { sort: 'latest' | 'top' } | undefined;
 };
 
