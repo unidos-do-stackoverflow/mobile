@@ -8,8 +8,7 @@ import {
 	Description,
 	Header,
 	List,
-	ImageContent,
-	Avatar,
+	ImageContent
 } from './styles';
 
 interface Props {
@@ -52,7 +51,7 @@ export default function index({ childName }: Props) {
 					</List>
 					{
 					<ImageContent>
-						<Image source={require('../../../../../assets/children1.jpg')}/>
+						<Image source={require('../../../../../assets/children-vetor.jpg')}/>
 					</ImageContent>
 					 }
 				</View>

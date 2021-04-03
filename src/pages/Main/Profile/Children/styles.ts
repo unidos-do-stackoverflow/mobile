@@ -42,7 +42,3 @@ export const List = styled.View`
 export const ImageContent = styled.View`
 	margin-top:125px;
 `;
-
-export const Avatar = styled.View`
-	borderRadius:90px;
-`;
