@@ -4,7 +4,7 @@ import Header from '../header';
 import ModalAddPost from '../modalAddPost';
 import { Container, TextQuestion, ContainerChildren, Name, Question, ContainerIconGrin } from './styles';
 import { FontAwesome5 } from '@expo/vector-icons';
-import ChildrenCreate from '../ChildrenCreate';
+import ChildrenCreate from '../Home';
 import { Checkbox } from 'react-native-paper';
 
 //TODO: alinhar checkbox, trocar o ícone pela foto e integrar API e fazer rota do modal.
