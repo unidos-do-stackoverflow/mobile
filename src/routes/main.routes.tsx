@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import {
-	MaterialCommunityIcons,
-	Ionicons,
-	Feather,
-} from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons, Ionicons, Feather } from '@expo/vector-icons';
 
 import TestScreen from '../pages/Main/TestScreen';
 import Screen1 from '../pages/Main/Screen1';
 import Screen2 from '../pages/Main/Screen2';
 import CreateChildren from '../pages/Main/CreateChildren';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function Routes() {
 	return (
-		<Tab.Navigator sceneAnimationEnabled={false}>
+		<Tab.Navigator tabBarOptions={{ keyboardHidesTabBar: true }}>
 			<Tab.Screen
 				name='Feed'
 				component={Screen2}
@@ -30,7 +26,7 @@ export default function Routes() {
 				component={CreateChildren}
 				options={{
 					tabBarIcon: ({ color }) => (
-						<Ionicons name="add-circle" size={30} color='white' />
+						<Ionicons name='add-circle' size={30} color='white' />
 					),
 				}}
 			/>
