@@ -42,6 +42,13 @@ export default function Post({ username, content, date }: IPostProps) {
 			'Mãe de 3 filhos, 32 anos, procurando ajuda e adoiando quando posso',
 		donation: [{ date: '1 mês', value: '200.00', receptor: 'Joana Carvalho' }],
 	};
+	
+	const [OpenModalD, setOpenModalD] = useState(false);
+	const modalDonation = ()=>{
+		setOpenModalD(true);
+		console.log(OpenModalD);
+	};
+		
 
 	interface IEmojiProps {
 		whichEmoji: string;
@@ -84,7 +91,7 @@ export default function Post({ username, content, date }: IPostProps) {
 					source={BoyStudying}
 					style={{ resizeMode: 'cover' }}
 				></PostPicture>
-				<PostList>
+				<PostList onPress={modalDonation}>
 					<FontAwesome5 name='clipboard-list' size={20} color='#404040' />
 				</PostList>
 			</PostPictureContainer>
