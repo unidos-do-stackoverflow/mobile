@@ -50,11 +50,11 @@ export default function index({ childName }: Props) {
 						<Text>{(childList.name = 'Carlos de Souza')}</Text>
 						<MaterialIcons name='account-circle' size={24} color='#005556' />
 					</List>
-					{/* 
+					{
 					<ImageContent>
 						<Image source={require('../../../../../assets/children1.jpg')}/>
 					</ImageContent>
-					 */}
+					 }
 				</View>
 			</Content>
 		</View>
