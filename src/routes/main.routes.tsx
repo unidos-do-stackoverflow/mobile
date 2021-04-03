@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import {
 	MaterialCommunityIcons,
-	FontAwesome5,
+	Ionicons,
 	Feather,
 } from '@expo/vector-icons';
 
 import TestScreen from '../pages/Main/TestScreen';
-import Screen2 from '../pages/Main/Screen2';
 import Screen1 from '../pages/Main/Screen1';
+import Screen2 from '../pages/Main/Screen2';
+import CreateChildren from '../pages/Main/CreateChildren';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -17,7 +18,7 @@ export default function Routes() {
 		<Tab.Navigator sceneAnimationEnabled={false}>
 			<Tab.Screen
 				name='Feed'
-				component={Screen1}
+				component={Screen2}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<MaterialCommunityIcons name='post' size={24} color='white' />
@@ -25,11 +26,11 @@ export default function Routes() {
 				}}
 			/>
 			<Tab.Screen
-				name='Doação'
-				component={Screen2}
+				name=' '
+				component={CreateChildren}
 				options={{
 					tabBarIcon: ({ color }) => (
-						<FontAwesome5 name='donate' size={24} color='white' />
+						<Ionicons name="add-circle" size={30} color='white' />
 					),
 				}}
 			/>
