@@ -16,7 +16,6 @@ export default function ModalAddPost() {
 
 			<ContainerCards>
 				<ContainerReceiver>
-					{/* //TODO: trocar ícone */}
 					<FontAwesome5 name='clipboard-list' size={40} color='#005556' />
 					<Description>Receber um material</Description>
 				</ContainerReceiver>

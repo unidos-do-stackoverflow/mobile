@@ -7,6 +7,8 @@ import TestScreen from '../pages/Main/TestScreen';
 import Screen1 from '../pages/Main/Screen1';
 import Screen2 from '../pages/Main/Screen2';
 import CreateChildren from '../pages/Main/CreateChildren';
+import AddModalPost from '../components/AddPostModal';
+
 import { View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -63,10 +65,11 @@ export default function Routes() {
 					}}
 				/>
 			</Tab.Navigator>
-			<Modal isVisible={isModalVisible}>
-				<View style={{ flex: 1 }}>
-					<Text>I am the modal content!</Text>
-				</View>
+			<Modal
+				isVisible={isModalVisible}
+				onBackdropPress={() => setModalVisibility(false)}
+			>
+				<AddModalPost />
 			</Modal>
 		</>
 	);
