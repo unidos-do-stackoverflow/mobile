@@ -4,9 +4,6 @@ import { FontAwesome5, FontAwesome } from '@expo/vector-icons';
 
 export default function ModalAddPost() {
 
-	
-	const [ visible, setVisible ] = useState(false)
-
 	return (
 
         <Container>
