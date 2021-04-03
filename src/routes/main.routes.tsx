@@ -30,24 +30,14 @@ export default function Routes() {
 				component={CreateChildren}
 				options={{
 					tabBarButton: (props) => (
-						<TouchableOpacity
-							{...props}
-							style={{
-								bottom: 30, // space from bottombar
-								height: 70,
-								width: 70,
-								borderRadius: 58,
-								justifyContent: 'center',
-								alignItems: 'center',
-							}}
-						>
+						<TouchableOpacity {...props} style={{ alignItems: 'center' }}>
 							<Ionicons
 								name='add-circle'
-								size={60}
-								color='#4d4d4d'
+								size={45}
+								color='#008147'
 								style={{
-									width: 60,
-									height: 60,
+									width: 45,
+									height: 45,
 									alignContent: 'center',
 								}}
 							/>
