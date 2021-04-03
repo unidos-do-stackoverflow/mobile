@@ -11,22 +11,24 @@ const Tab = createBottomTabNavigator();
 
 export default function Routes() {
 	return (
-		<Tab.Navigator tabBarOptions={{ keyboardHidesTabBar: true }}>
+		<Tab.Navigator
+			tabBarOptions={{ keyboardHidesTabBar: true, showLabel: false }}
+		>
 			<Tab.Screen
 				name='Feed'
 				component={Screen2}
 				options={{
 					tabBarIcon: ({ color }) => (
-						<MaterialCommunityIcons name='post' size={24} color='white' />
+						<MaterialCommunityIcons name='post' size={24} color='#4d4d4d' />
 					),
 				}}
 			/>
 			<Tab.Screen
-				name=' '
+				name='Criar post'
 				component={CreateChildren}
 				options={{
 					tabBarIcon: ({ color }) => (
-						<Ionicons name='add-circle' size={30} color='white' />
+						<Ionicons name='add-circle' size={30} color='#4d4d4d' />
 					),
 				}}
 			/>
@@ -35,7 +37,7 @@ export default function Routes() {
 				component={TestScreen}
 				options={{
 					tabBarIcon: ({ color }) => (
-						<Feather name='settings' size={24} color='white' />
+						<Feather name='settings' size={24} color='#4d4d4d' />
 					),
 				}}
 			/>
