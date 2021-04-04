@@ -37,16 +37,8 @@ export default function PayDonation2() {
 				
 			{ useLiteCreditCardInput ?
 			  (
-				<LiteCreditCardInput
-				  autoFocus
-				  inputStyle={s.input}
-	
-				  validColor={"black"}
-				  invalidColor={"red"}
-				  placeholderColor={"darkgray"}
-	
-				  onFocus={_onFocus}
-				  onChange={_onChange} />
+				 <>
+				</>
 			  ) : (
 				<CreditCardInput
 				  autoFocus
@@ -110,8 +102,6 @@ const s = StyleSheet.create({
 	},
 	border: {
 		borderColor: '#72E5A2',
-		borderBottomWidth: 1,
-
-		
+		borderBottomWidth: 1,		
 	}
   });
