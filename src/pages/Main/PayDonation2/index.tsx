@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Container, DonateButton, DonateButtonText } from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -26,9 +26,16 @@ export default function PayDonation2() {
 	return (
 		<Container>
 			<HeaderTitle/>
-			<DonateButton onPress={navigateToPayDonation3}>
-				<DonateButtonText>Próxima tela</DonateButtonText>
-			</DonateButton>
+			<TouchableOpacity onPress={navigateToPayDonation3}>
+				<Text style={{textAlign: 'right', fontWeight: '700',fontSize: 18, color: '#005556', marginRight: 40}}>PRÓXIMO</Text>
+			</TouchableOpacity>
+			<View style={{justifyContent: 'center', alignItems: 'center'}}>
+				<View style={{flexDirection: 'row', marginTop: 30, marginBottom: 20}}>
+					<View style={{width: 15, height: 15, backgroundColor: '#005556', borderRadius: 7, marginRight: 8}}></View>
+					<View style={{width: 15, height: 15, backgroundColor: '#005556', borderRadius: 7, marginRight: 8}}></View>
+					<View style={{width: 15, height: 15, backgroundColor: '#C4C4C4', borderRadius: 7}}></View>
+				</View>
+			</View>
 		</Container>
 	);
 }
