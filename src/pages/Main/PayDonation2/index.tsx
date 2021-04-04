@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Container, DonateButton, DonateButtonText } from './styles';
+import { View, Text, TouchableOpacity, Switch, StyleSheet } from 'react-native';
+import { Container } from './styles';
+import { CreditCardInput, LiteCreditCardInput } from 'react-native-credit-card-input';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -23,9 +24,59 @@ export default function PayDonation2() {
 		);
 	};
 
+	const BodyCard = ()=>{
+		
+		const [useLiteCreditCardInput, setUseLiteCreditCardInput] = React.useState(false);
+
+		const _onChange = (formData:any) => console.log(JSON.stringify(formData, null, " "));
+		const _onFocus = (field: any) => console.log("focusing", field);
+		const _setUseLiteCreditCardInput = (useLiteCreditCardInput:any) => setUseLiteCreditCardInput(useLiteCreditCardInput);
+
+		return(
+			<View style={s.container}>
+				
+			{ useLiteCreditCardInput ?
+			  (
+				<LiteCreditCardInput
+				  autoFocus
+				  inputStyle={s.input}
+	
+				  validColor={"black"}
+				  invalidColor={"red"}
+				  placeholderColor={"darkgray"}
+	
+				  onFocus={_onFocus}
+				  onChange={_onChange} />
+			  ) : (
+				<CreditCardInput
+				  autoFocus
+	
+				  requiresName
+				  requiresCVC
+				  requiresPostalCode
+	
+				  labelStyle={s.label}
+				  inputStyle={s.input}
+				  validColor={"black"}
+				  invalidColor={"red"}
+				  placeholderColor={"darkgray"}
+				  labels={{number: "NÚMERO DO CARTÃO", expiry: "VENC", cvc: "CVV"}}
+				  onFocus={_onFocus}
+				  inputContainerStyle={s.border}
+				  onChange={_onChange} />
+				  
+			  )
+			}
+		  </View>
+		);
+	}
+
 	return (
 		<Container>
 			<HeaderTitle/>
+			<View style={{flex: 1}}>
+				<BodyCard/>
+			</View>
 			<TouchableOpacity onPress={navigateToPayDonation3}>
 				<Text style={{textAlign: 'right', fontWeight: '700',fontSize: 18, color: '#005556', marginRight: 40}}>PRÓXIMO</Text>
 			</TouchableOpacity>
@@ -39,3 +90,28 @@ export default function PayDonation2() {
 		</Container>
 	);
 }
+const s = StyleSheet.create({
+	switch: {
+	  alignSelf: "center",
+	  marginTop: 20,
+	  marginBottom: 20,
+	},
+	container: {
+	  backgroundColor: "#F5F5F5",
+	  marginTop: 30,
+	},
+	label: {
+	  color: "black",
+	  fontSize: 12,
+	},
+	input: {
+	  fontSize: 16,
+	  color: "black",
+	},
+	border: {
+		borderColor: '#72E5A2',
+		borderBottomWidth: 1,
+
+		
+	}
+  });
