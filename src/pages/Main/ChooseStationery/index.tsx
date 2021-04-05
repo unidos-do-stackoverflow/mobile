@@ -5,6 +5,9 @@ import {
 	BoldText,
 	MiddleContainer,
 	AddChildButton,
+	PpContainer,
+	PpRow,
+	Pp,
 } from './styles';
 import Header from '../../../components/Header';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -23,13 +26,19 @@ export default function Budget() {
 			<Header title='PEDIDO DE DOAÇÃO' subtitle='Orçamento'>
 				<FontAwesome5 name='clipboard-list' size={24} color='#005556' />
 			</Header>
-
 			<MiddleContainer>
 				<Text>Escolha uma papelaria</Text>
-				<BoldText>
-					Você ainda não possui nenhum orçamento. Crie um novo abaixo :)
-				</BoldText>
-				<Entypo name='add-to-list' size={40} color='#005556' />
+
+				<PpContainer>
+					<PpRow>
+						<Pp></Pp>
+						<Pp></Pp>
+					</PpRow>
+					<PpRow>
+						<Pp></Pp>
+						<Pp></Pp>
+					</PpRow>
+				</PpContainer>
 			</MiddleContainer>
 		</Container>
 	);

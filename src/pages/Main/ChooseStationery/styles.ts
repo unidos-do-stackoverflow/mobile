@@ -23,4 +23,24 @@ export const BoldText = styled.Text`
 	margin-bottom: 10px;
 `;
 
+export const Pp = styled.TouchableOpacity`
+	width: 100px;
+	height: 100px;
+	background-color: red;
+`;
+
+export const PpRow = styled.View`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	margin-bottom: 20px;
+`;
+
+export const PpContainer = styled.View`
+	margin-top: 20px;
+	width: 100%;
+	justify-content: space-around;
+`;
+
 export const AddChildButton = styled.TouchableOpacity``;
