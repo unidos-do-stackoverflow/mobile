@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesome5, FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import { MaterialCommunityIcons, Ionicons, Feather } from '@expo/vector-icons';
 import Modal from 'react-native-modal';
 
@@ -11,13 +13,21 @@ import Profile from '../pages/Main/Profile';
 import Screen1 from '../pages/Main/Screen1';
 import CreateChildren from '../pages/Main/CreateChildren';
 import AddModalPost from '../components/AddPostModal';
+import DonationRequest from '../pages/Main/DonationRequest';
 
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Tab = createBottomTabNavigator();
 
+// Internal Stack navigation
+const MainStack = createStackNavigator();
+
 export default function Routes() {
 	const [isModalVisible, setModalVisibility] = useState(false);
+
+	function _handleRequest() {
+		setModalVisibility(false);
+	}
 
 	function TabsHome() {
 		return (
@@ -56,7 +66,7 @@ export default function Routes() {
 							tabBarButton: () => (
 								<TouchableOpacity
 									style={{ alignItems: 'center' }}
-									onPress={() => setModalVisibility(!isModalVisible)}
+									onPress={() => setModalVisibility(true)}
 								>
 									<Ionicons
 										name='add-circle'
@@ -97,13 +107,27 @@ export default function Routes() {
 				</Tab.Navigator>
 				<Modal
 					isVisible={isModalVisible}
-					onBackdropPress={() => setModalVisibility(false)}
+					onBackdropPress={() => setModalVisibility(!isModalVisible)}
 				>
-					<AddModalPost />
+					<AddModalPost handleRequest={_handleRequest} />
 				</Modal>
 			</>
 		);
 	}
 
-	return <TabsHome />;
+	return (
+		<MainStack.Navigator>
+			<MainStack.Screen
+				name='TabsHome'
+				component={TabsHome}
+				options={{ headerShown: false }}
+			/>
+
+			<MainStack.Screen
+				name='DonationRequest'
+				component={DonationRequest}
+				options={{ headerShown: false }}
+			/>
+		</MainStack.Navigator>
+	);
 }
