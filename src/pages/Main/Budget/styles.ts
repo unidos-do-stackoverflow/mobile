@@ -15,10 +15,11 @@ export const MiddleContainer = styled.View`
 `;
 export const Text = styled.Text`
 	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
 `;
 export const BoldText = styled.Text`
 	text-align: center;
-	font-weight: bold;
 	margin-bottom: 10px;
 `;
 
