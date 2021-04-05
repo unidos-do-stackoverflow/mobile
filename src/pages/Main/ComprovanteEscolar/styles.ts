@@ -19,6 +19,7 @@ export const Text = styled.Text`
 export const BoldText = styled.Text`
 	text-align: center;
 	font-weight: bold;
+	margin-bottom: 10px;
 `;
 
 export const AddChildButton = styled.TouchableOpacity``;

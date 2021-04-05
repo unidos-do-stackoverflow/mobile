@@ -8,14 +8,14 @@ import {
 } from './styles';
 import Header from '../../../components/Header';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 export default function DonationRequest() {
 	const navigation = useNavigation();
 
-	function navigateToCreateChildren() {
-		navigation.navigate('CreateChildren');
+	function navigateToFotoComprovante() {
+		navigation.navigate('FotoComprovante');
 	}
 
 	function NoChildren() {
@@ -25,8 +25,8 @@ export default function DonationRequest() {
 				<BoldText>
 					insira uma foto do comprovante de matrícula desse ano letivo :)
 				</BoldText>
-				<AddChildButton onPress={navigateToCreateChildren}>
-					<Ionicons name='ios-person-add' size={45} color='#005556' />
+				<AddChildButton onPress={navigateToFotoComprovante}>
+					<AntDesign name='camera' size={40} color='#005556' />
 				</AddChildButton>
 			</>
 		);
