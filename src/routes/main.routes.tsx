@@ -15,6 +15,7 @@ import CreateChildren from '../pages/Main/CreateChildren';
 import AddModalPost from '../components/AddPostModal';
 import DonationRequest from '../pages/Main/DonationRequest';
 import ComprovanteEscolar from '../pages/Main/ComprovanteEscolar';
+import FotoComprovante from '../pages/Main/FotoComprovante';
 
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -135,6 +136,12 @@ export default function Routes() {
 			<MainStack.Screen
 				name='ComprovanteEscolar'
 				component={ComprovanteEscolar}
+				options={{ headerShown: false }}
+			/>
+
+			<MainStack.Screen
+				name='FotoComprovante'
+				component={FotoComprovante}
 				options={{ headerShown: false }}
 			/>
 		</MainStack.Navigator>
