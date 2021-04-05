@@ -12,16 +12,23 @@ import {
 	NextButtonText,
 } from './styles';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 import Header from '../../../components/Header';
 
 export default function CreateChildren() {
+	const navigation = useNavigation();
+
 	const [name, setName] = useState('');
 	const [dateOfBirth, setDateOfBirth] = useState('');
 	const [gender, setGender] = useState('');
 	const [address, setAddress] = useState('');
 	const [school, setSchool] = useState('');
 	const [year, setYear] = useState('');
+
+	function navigateToComprovante() {
+		navigation.navigate('ComprovanteEscolar');
+	}
 
 	return (
 		<Container>
@@ -88,7 +95,7 @@ export default function CreateChildren() {
 					style={{ width: '100%' }}
 				/>
 
-				<NextButton>
+				<NextButton onPress={navigateToComprovante}>
 					<NextButtonText>PRÓXIMO</NextButtonText>
 				</NextButton>
 			</Form>

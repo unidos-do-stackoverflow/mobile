@@ -14,6 +14,7 @@ import Screen1 from '../pages/Main/Screen1';
 import CreateChildren from '../pages/Main/CreateChildren';
 import AddModalPost from '../components/AddPostModal';
 import DonationRequest from '../pages/Main/DonationRequest';
+import ComprovanteEscolar from '../pages/Main/ComprovanteEscolar';
 
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -44,7 +45,6 @@ export default function Routes() {
 							),
 						}}
 					/>
-
 					<Tab.Screen
 						name='Doação'
 						component={Donation}
@@ -58,10 +58,9 @@ export default function Routes() {
 							),
 						}}
 					/>
-
 					<Tab.Screen
 						name='Criar post'
-						component={CreateChildren}
+						component={Screen1}
 						options={{
 							tabBarButton: () => (
 								<TouchableOpacity
@@ -84,7 +83,6 @@ export default function Routes() {
 							),
 						}}
 					/>
-
 					<Tab.Screen
 						name='Configurações'
 						component={Screen1}
@@ -94,7 +92,6 @@ export default function Routes() {
 							),
 						}}
 					/>
-
 					<Tab.Screen
 						name='Perfil'
 						component={Profile}
@@ -132,6 +129,12 @@ export default function Routes() {
 			<MainStack.Screen
 				name='CreateChildren'
 				component={CreateChildren}
+				options={{ headerShown: false }}
+			/>
+
+			<MainStack.Screen
+				name='ComprovanteEscolar'
+				component={ComprovanteEscolar}
 				options={{ headerShown: false }}
 			/>
 		</MainStack.Navigator>
