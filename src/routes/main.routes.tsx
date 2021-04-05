@@ -33,6 +33,21 @@ export default function Routes() {
 						),
 					}}
 				/>
+
+				<Tab.Screen
+					name='Doação'
+					component={Donation}
+					options={{
+						tabBarIcon: () => (
+							<FontAwesome5
+								name='hand-holding-heart'
+								size={24}
+								color='#4d4d4d'
+							/>
+						),
+					}}
+				/>
+
 				<Tab.Screen
 					name='Criar post'
 					component={CreateChildren}
@@ -50,6 +65,8 @@ export default function Routes() {
 										width: 45,
 										height: 45,
 										alignContent: 'center',
+										marginLeft: 10,
+										marginRight: 10,
 									}}
 								/>
 							</TouchableOpacity>
@@ -58,29 +75,21 @@ export default function Routes() {
 				/>
 
 				<Tab.Screen
-					name='Doação'
-					component={Donation}
-					options={{
-						tabBarIcon: () => (
-							<FontAwesome5 name='donate' size={24} color='white' />
-						),
-					}}
-				/>
-				<Tab.Screen
-					name='Perfil'
-					component={Profile}
-					options={{
-						tabBarIcon: () => (
-							<FontAwesome name='user' size={24} color='white' />
-						),
-					}}
-				/>
-				<Tab.Screen
 					name='Configurações'
 					component={Screen1}
 					options={{
 						tabBarIcon: () => (
 							<Feather name='settings' size={24} color='#4d4d4d' />
+						),
+					}}
+				/>
+
+				<Tab.Screen
+					name='Perfil'
+					component={Profile}
+					options={{
+						tabBarIcon: () => (
+							<FontAwesome name='user' size={24} color='#4d4d4d' />
 						),
 					}}
 				/>
