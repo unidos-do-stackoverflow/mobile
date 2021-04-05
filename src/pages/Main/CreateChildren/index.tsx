@@ -8,6 +8,8 @@ import {
 	ContainerIcon,
 	ContainerInput,
 	Form,
+	NextButton,
+	NextButtonText,
 } from './styles';
 import { FontAwesome5 } from '@expo/vector-icons';
 
@@ -86,7 +88,9 @@ export default function CreateChildren() {
 					style={{ width: '100%' }}
 				/>
 
-				<Text>Próximo</Text>
+				<NextButton>
+					<NextButtonText>PRÓXIMO</NextButtonText>
+				</NextButton>
 			</Form>
 		</Container>
 	);

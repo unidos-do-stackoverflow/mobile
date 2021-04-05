@@ -32,3 +32,16 @@ export const Form = styled.View`
 	align-items: center;
 	width: 100%;
 `;
+
+export const NextButton = styled.TouchableOpacity`
+	margin-top: 10px;
+	width: 100%;
+`;
+
+export const NextButtonText = styled.Text`
+	width: 100%;
+	font-weight: bold;
+	font-size: 15px;
+	text-align: right;
+	color: #005556;
+`;
