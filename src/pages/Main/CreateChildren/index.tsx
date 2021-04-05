@@ -1,45 +1,93 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Avatar, TextInput } from 'react-native-paper';
-import { Text } from 'react-native'
-import { Container, ContainerDateOfBirth, ContainerGender, ContainerIcon, ContainerInput } from './styles';
+import { Text } from 'react-native';
+import {
+	Container,
+	ContainerDateOfBirth,
+	ContainerGender,
+	ContainerIcon,
+	ContainerInput,
+	Form,
+} from './styles';
+import { FontAwesome5 } from '@expo/vector-icons';
 
-//TODO: terminar de estilizar e trocar ícone.
+import Header from '../../../components/Header';
 
 export default function CreateChildren() {
-    const [name, setName] = useState('');
-    const [dateOfBirth, setDateOfBirth] = useState('');
-    const [gender, setGender] = useState('');
-    const [address, setAddress] = useState('');
-    const [school, setSchool] = useState('');
-    const [year, setYear] = useState('');
-    
+	const [name, setName] = useState('');
+	const [dateOfBirth, setDateOfBirth] = useState('');
+	const [gender, setGender] = useState('');
+	const [address, setAddress] = useState('');
+	const [school, setSchool] = useState('');
+	const [year, setYear] = useState('');
 
-    return (
-        <Container>
+	return (
+		<Container>
+			<Header title='PEDIDO DE DOAÇÃO' subtitle='Cadastro de crianças'>
+				<FontAwesome5 name='clipboard-list' size={24} color='#005556' />
+			</Header>
 
-            <ContainerIcon>
-                <Avatar.Icon size={80} icon='account' />
-            </ContainerIcon>
-            
-                <TextInput mode='outlined' label='Nome completo da criança' placeholder={'Digite a data'} value={name} onChangeText={text => setName(text)}/>
-         
-            <ContainerInput>
-                
-                <ContainerDateOfBirth>
-                <TextInput mode='outlined' label='Data de nascimento' placeholder={'Digite a data'} value={dateOfBirth} onChangeText={text => setDateOfBirth(text)}/>
-                </ContainerDateOfBirth>
+			<Form>
+				<ContainerIcon>
+					<Avatar.Icon size={80} icon='account' />
+				</ContainerIcon>
 
-                <ContainerGender>
-                    <TextInput mode='outlined' label='Sexo' placeholder={'F'} value={gender} onChangeText={text => setGender(text)} />
-                </ContainerGender>
+				<TextInput
+					mode='outlined'
+					label='Nome completo da criança'
+					placeholder={'Digite a data'}
+					value={name}
+					onChangeText={(text) => setName(text)}
+					style={{ width: '100%' }}
+				/>
 
-            </ContainerInput>
-            
-            <TextInput mode='outlined' label='Endereço' placeholder={'Digite o endereço'} value={address} onChangeText={text => setAddress(text)}/>
-            <TextInput mode='outlined' label='Escola' placeholder={'Selecione a escola'} value={school} onChangeText={text => setSchool(text)}/>
-            <TextInput mode='outlined' label='Ano' placeholder={'Selecione o ano do EF/EM'} value={year} onChangeText={text => setYear(text)}/>
+				<ContainerInput>
+					<TextInput
+						mode='outlined'
+						label='Data de nascimento'
+						placeholder={'Digite a data'}
+						value={dateOfBirth}
+						onChangeText={(text) => setDateOfBirth(text)}
+						style={{ width: '60%' }}
+					/>
 
-            <Text>Próximo</Text>
-        </Container>
-    );
+					<TextInput
+						mode='outlined'
+						label='Sexo'
+						placeholder={'F'}
+						value={gender}
+						onChangeText={(text) => setGender(text)}
+						style={{ width: '40%' }}
+					/>
+				</ContainerInput>
+
+				<TextInput
+					mode='outlined'
+					label='Endereço'
+					placeholder={'Digite o endereço'}
+					value={address}
+					onChangeText={(text) => setAddress(text)}
+					style={{ width: '100%' }}
+				/>
+				<TextInput
+					mode='outlined'
+					label='Escola'
+					placeholder={'Selecione a escola'}
+					value={school}
+					onChangeText={(text) => setSchool(text)}
+					style={{ width: '100%' }}
+				/>
+				<TextInput
+					mode='outlined'
+					label='Ano'
+					placeholder={'Selecione o ano do EF/EM'}
+					value={year}
+					onChangeText={(text) => setYear(text)}
+					style={{ width: '100%' }}
+				/>
+
+				<Text>Próximo</Text>
+			</Form>
+		</Container>
+	);
 }
