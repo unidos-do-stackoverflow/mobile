@@ -25,13 +25,11 @@ export default function Budget() {
 			</Header>
 
 			<MiddleContainer>
-				<Text>Montar orçamento</Text>
+				<Text>Escolha uma papelaria</Text>
 				<BoldText>
 					Você ainda não possui nenhum orçamento. Crie um novo abaixo :)
 				</BoldText>
-				<AddChildButton onPress={navigateToChooseStationery}>
-					<Entypo name='add-to-list' size={40} color='#005556' />
-				</AddChildButton>
+				<Entypo name='add-to-list' size={40} color='#005556' />
 			</MiddleContainer>
 		</Container>
 	);
