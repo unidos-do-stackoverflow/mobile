@@ -18,6 +18,7 @@ import ComprovanteEscolar from '../pages/Main/ComprovanteEscolar';
 import FotoComprovante from '../pages/Main/FotoComprovante';
 
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Budget from '../pages/Main/Budget';
 
 const Tab = createBottomTabNavigator();
 
@@ -142,6 +143,12 @@ export default function Routes() {
 			<MainStack.Screen
 				name='FotoComprovante'
 				component={FotoComprovante}
+				options={{ headerShown: false }}
+			/>
+
+			<MainStack.Screen
+				name='Budget'
+				component={Budget}
 				options={{ headerShown: false }}
 			/>
 		</MainStack.Navigator>
