@@ -26,6 +26,8 @@ import {
 	EmojiWrapper,
 } from './styles';
 import Tag from './Tag';
+import Modal from 'react-native-modal';
+import List from './List';
 
 import BoyStudying from '../../../assets/boy-studying-1.jpg';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -41,6 +43,12 @@ export default function Post({ username, content, date }: IPostProps) {
 		description:
 			'Mãe de 3 filhos, 32 anos, procurando ajuda e adoiando quando posso',
 		donation: [{ date: '1 mês', value: '200.00', receptor: 'Joana Carvalho' }],
+	};
+
+	const [isModalVisible, setModalVisibility] = useState(false);
+
+	const openModal = () => {
+		setModalVisibility(true);
 	};
 
 	interface IEmojiProps {
@@ -84,7 +92,7 @@ export default function Post({ username, content, date }: IPostProps) {
 					source={BoyStudying}
 					style={{ resizeMode: 'cover' }}
 				></PostPicture>
-				<PostList>
+				<PostList onPress={openModal}>
 					<FontAwesome5 name='clipboard-list' size={20} color='#404040' />
 				</PostList>
 			</PostPictureContainer>
@@ -116,6 +124,14 @@ export default function Post({ username, content, date }: IPostProps) {
 					<CommentsText>12 comentários</CommentsText>
 				</CommentsContainer>
 			</PostFooter>
+
+			<Modal
+				isVisible={isModalVisible}
+				onBackdropPress={() => setModalVisibility(false)}
+				backdropTransitionOutTiming={0}
+			>
+				<List />
+			</Modal>
 		</Container>
 	);
 }
