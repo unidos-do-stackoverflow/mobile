@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { Container } from './styles';
+import Header from '../../../components/Header';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function Feed() {
 	return (
 		<Container>
-			<Text>Donation</Text>
+			<Header title='PEDIDO DE DOAÇÃO' subtitle='Cadastro de crianças'>
+				<FontAwesome5 name='clipboard-list' size={24} color='#005556' />
+			</Header>
 		</Container>
 	);
 }
