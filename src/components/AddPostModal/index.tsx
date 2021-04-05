@@ -7,7 +7,7 @@ import {
 	ContainerDonor,
 	Description,
 } from './styles';
-import { FontAwesome5, FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function ModalAddPost() {
 	return (
