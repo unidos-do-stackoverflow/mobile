@@ -9,8 +9,15 @@ import {
 import Header from '../../../components/Header';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function DonationRequest() {
+	const navigation = useNavigation();
+
+	function navigateToCreateChildren() {
+		navigation.navigate('CreateChildren');
+	}
+
 	function NoChildren() {
 		return (
 			<>
@@ -18,7 +25,7 @@ export default function DonationRequest() {
 				<BoldText>
 					Registre abaixo para prosseguir com o pedido de doação.
 				</BoldText>
-				<AddChildButton>
+				<AddChildButton onPress={navigateToCreateChildren}>
 					<Ionicons name='ios-person-add' size={45} color='#005556' />
 				</AddChildButton>
 			</>

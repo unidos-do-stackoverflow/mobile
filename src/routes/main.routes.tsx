@@ -128,6 +128,12 @@ export default function Routes() {
 				component={DonationRequest}
 				options={{ headerShown: false }}
 			/>
+
+			<MainStack.Screen
+				name='CreateChildren'
+				component={CreateChildren}
+				options={{ headerShown: false }}
+			/>
 		</MainStack.Navigator>
 	);
 }
