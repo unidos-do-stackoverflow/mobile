@@ -26,7 +26,24 @@ export const BoldText = styled.Text`
 export const Pp = styled.TouchableOpacity`
 	width: 100px;
 	height: 100px;
-	background-color: red;
+	background-color: #ececec;
+	align-items: center;
+	justify-content: center;
+`;
+
+export const PpImg = styled.Image`
+	width: 85px;
+	height: 62.5px;
+`;
+
+export const PpName = styled.Text`
+	margin-top: 5px;
+	width: 100px;
+	text-align: center;
+`;
+
+export const IndividualPpContainer = styled.View`
+	align-items: center;
 `;
 
 export const PpRow = styled.View`
