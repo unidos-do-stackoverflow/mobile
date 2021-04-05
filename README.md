@@ -62,13 +62,10 @@ yarn start
 Desenvolvido com 🧡 por:
 
 - Fábio Alvarenga 
-
   [GitHub](https://github.com/fabio-alvarenga) | [Linkedin](https://www.linkedin.com/in/jove/)
   
 - Matheus Montenegro
-
   [GitHub](https://github.com/matheusmontenegro97) | [Linkedin](https://www.linkedin.com/in/matheus-montenegro-8a90931bb/)
   
 - Renato Carlos 
-
    [GitHub](https://github.com/ZFRenato) | [Linkedin](https://www.linkedin.com/in/renato-carvalho-82129420b)
