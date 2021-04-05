@@ -69,3 +69,7 @@ Desenvolvido com 🧡 por:
   
 - Renato Carlos 
    [GitHub](https://github.com/ZFRenato) | [Linkedin](https://www.linkedin.com/in/renato-carvalho-82129420b)
+   
+- Isabela Rocha 
+   [GitHub](https://github.com/Isabelar07) | [Linkedin](https://www.linkedin.com/in/isabela-rocha-silveira-4875611a3/)
+   
