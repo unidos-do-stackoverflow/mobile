@@ -19,87 +19,91 @@ const Tab = createBottomTabNavigator();
 export default function Routes() {
 	const [isModalVisible, setModalVisibility] = useState(false);
 
-	return (
-		<>
-			<Tab.Navigator
-				tabBarOptions={{ keyboardHidesTabBar: true, showLabel: false }}
-			>
-				<Tab.Screen
-					name='Feed'
-					component={Feed}
-					options={{
-						tabBarIcon: () => (
-							<MaterialCommunityIcons name='post' size={24} color='#4d4d4d' />
-						),
-					}}
-				/>
+	function TabsHome() {
+		return (
+			<>
+				<Tab.Navigator
+					tabBarOptions={{ keyboardHidesTabBar: true, showLabel: false }}
+				>
+					<Tab.Screen
+						name='Feed'
+						component={Feed}
+						options={{
+							tabBarIcon: () => (
+								<MaterialCommunityIcons name='post' size={24} color='#4d4d4d' />
+							),
+						}}
+					/>
 
-				<Tab.Screen
-					name='Doação'
-					component={Donation}
-					options={{
-						tabBarIcon: () => (
-							<FontAwesome5
-								name='hand-holding-heart'
-								size={24}
-								color='#4d4d4d'
-							/>
-						),
-					}}
-				/>
-
-				<Tab.Screen
-					name='Criar post'
-					component={CreateChildren}
-					options={{
-						tabBarButton: () => (
-							<TouchableOpacity
-								style={{ alignItems: 'center' }}
-								onPress={() => setModalVisibility(!isModalVisible)}
-							>
-								<Ionicons
-									name='add-circle'
-									size={45}
-									color='#008147'
-									style={{
-										width: 45,
-										height: 45,
-										alignContent: 'center',
-										marginLeft: 10,
-										marginRight: 10,
-									}}
+					<Tab.Screen
+						name='Doação'
+						component={Donation}
+						options={{
+							tabBarIcon: () => (
+								<FontAwesome5
+									name='hand-holding-heart'
+									size={24}
+									color='#4d4d4d'
 								/>
-							</TouchableOpacity>
-						),
-					}}
-				/>
+							),
+						}}
+					/>
 
-				<Tab.Screen
-					name='Configurações'
-					component={Screen1}
-					options={{
-						tabBarIcon: () => (
-							<Feather name='settings' size={24} color='#4d4d4d' />
-						),
-					}}
-				/>
+					<Tab.Screen
+						name='Criar post'
+						component={CreateChildren}
+						options={{
+							tabBarButton: () => (
+								<TouchableOpacity
+									style={{ alignItems: 'center' }}
+									onPress={() => setModalVisibility(!isModalVisible)}
+								>
+									<Ionicons
+										name='add-circle'
+										size={45}
+										color='#008147'
+										style={{
+											width: 45,
+											height: 45,
+											alignContent: 'center',
+											marginLeft: 10,
+											marginRight: 10,
+										}}
+									/>
+								</TouchableOpacity>
+							),
+						}}
+					/>
 
-				<Tab.Screen
-					name='Perfil'
-					component={Profile}
-					options={{
-						tabBarIcon: () => (
-							<FontAwesome name='user' size={24} color='#4d4d4d' />
-						),
-					}}
-				/>
-			</Tab.Navigator>
-			<Modal
-				isVisible={isModalVisible}
-				onBackdropPress={() => setModalVisibility(false)}
-			>
-				<AddModalPost />
-			</Modal>
-		</>
-	);
+					<Tab.Screen
+						name='Configurações'
+						component={Screen1}
+						options={{
+							tabBarIcon: () => (
+								<Feather name='settings' size={24} color='#4d4d4d' />
+							),
+						}}
+					/>
+
+					<Tab.Screen
+						name='Perfil'
+						component={Profile}
+						options={{
+							tabBarIcon: () => (
+								<FontAwesome name='user' size={24} color='#4d4d4d' />
+							),
+						}}
+					/>
+				</Tab.Navigator>
+				<Modal
+					isVisible={isModalVisible}
+					onBackdropPress={() => setModalVisibility(false)}
+				>
+					<AddModalPost />
+				</Modal>
+			</>
+		);
+	}
+
+	return <TabsHome />;
 }
