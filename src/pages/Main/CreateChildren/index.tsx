@@ -1,45 +1,104 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Avatar, TextInput } from 'react-native-paper';
-import { Text } from 'react-native'
-import { Container, ContainerDateOfBirth, ContainerGender, ContainerIcon, ContainerInput } from './styles';
+import { Text } from 'react-native';
+import {
+	Container,
+	ContainerDateOfBirth,
+	ContainerGender,
+	ContainerIcon,
+	ContainerInput,
+	Form,
+	NextButton,
+	NextButtonText,
+} from './styles';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-//TODO: terminar de estilizar e trocar ícone.
+import Header from '../../../components/Header';
 
 export default function CreateChildren() {
-    const [name, setName] = useState('');
-    const [dateOfBirth, setDateOfBirth] = useState('');
-    const [gender, setGender] = useState('');
-    const [address, setAddress] = useState('');
-    const [school, setSchool] = useState('');
-    const [year, setYear] = useState('');
-    
+	const navigation = useNavigation();
 
-    return (
-        <Container>
+	const [name, setName] = useState('');
+	const [dateOfBirth, setDateOfBirth] = useState('');
+	const [gender, setGender] = useState('');
+	const [address, setAddress] = useState('');
+	const [school, setSchool] = useState('');
+	const [year, setYear] = useState('');
 
-            <ContainerIcon>
-                <Avatar.Icon size={80} icon='account' />
-            </ContainerIcon>
-            
-                <TextInput mode='outlined' label='Nome completo da criança' placeholder={'Digite a data'} value={name} onChangeText={text => setName(text)}/>
-         
-            <ContainerInput>
-                
-                <ContainerDateOfBirth>
-                <TextInput mode='outlined' label='Data de nascimento' placeholder={'Digite a data'} value={dateOfBirth} onChangeText={text => setDateOfBirth(text)}/>
-                </ContainerDateOfBirth>
+	function navigateToComprovante() {
+		navigation.navigate('ComprovanteEscolar');
+	}
 
-                <ContainerGender>
-                    <TextInput mode='outlined' label='Sexo' placeholder={'F'} value={gender} onChangeText={text => setGender(text)} />
-                </ContainerGender>
+	return (
+		<Container>
+			<Header title='PEDIDO DE DOAÇÃO' subtitle='Cadastro de crianças'>
+				<FontAwesome5 name='clipboard-list' size={24} color='#005556' />
+			</Header>
 
-            </ContainerInput>
-            
-            <TextInput mode='outlined' label='Endereço' placeholder={'Digite o endereço'} value={address} onChangeText={text => setAddress(text)}/>
-            <TextInput mode='outlined' label='Escola' placeholder={'Selecione a escola'} value={school} onChangeText={text => setSchool(text)}/>
-            <TextInput mode='outlined' label='Ano' placeholder={'Selecione o ano do EF/EM'} value={year} onChangeText={text => setYear(text)}/>
+			<Form>
+				<ContainerIcon>
+					<Avatar.Icon size={80} icon='account' />
+				</ContainerIcon>
 
-            <Text>Próximo</Text>
-        </Container>
-    );
+				<TextInput
+					mode='outlined'
+					label='Nome completo da criança'
+					placeholder={'Digite a data'}
+					value={name}
+					onChangeText={(text) => setName(text)}
+					style={{ width: '100%' }}
+				/>
+
+				<ContainerInput>
+					<TextInput
+						mode='outlined'
+						label='Data de nascimento'
+						placeholder={'Digite a data'}
+						value={dateOfBirth}
+						onChangeText={(text) => setDateOfBirth(text)}
+						style={{ width: '60%' }}
+					/>
+
+					<TextInput
+						mode='outlined'
+						label='Sexo'
+						placeholder={'F'}
+						value={gender}
+						onChangeText={(text) => setGender(text)}
+						style={{ width: '40%' }}
+					/>
+				</ContainerInput>
+
+				<TextInput
+					mode='outlined'
+					label='Endereço'
+					placeholder={'Digite o endereço'}
+					value={address}
+					onChangeText={(text) => setAddress(text)}
+					style={{ width: '100%' }}
+				/>
+				<TextInput
+					mode='outlined'
+					label='Escola'
+					placeholder={'Selecione a escola'}
+					value={school}
+					onChangeText={(text) => setSchool(text)}
+					style={{ width: '100%' }}
+				/>
+				<TextInput
+					mode='outlined'
+					label='Ano'
+					placeholder={'Selecione o ano do EF/EM'}
+					value={year}
+					onChangeText={(text) => setYear(text)}
+					style={{ width: '100%' }}
+				/>
+
+				<NextButton onPress={navigateToComprovante}>
+					<NextButtonText>PRÓXIMO</NextButtonText>
+				</NextButton>
+			</Form>
+		</Container>
+	);
 }
