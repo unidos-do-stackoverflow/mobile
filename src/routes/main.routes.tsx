@@ -17,6 +17,7 @@ import DonationRequest from '../pages/Main/DonationRequest';
 import ComprovanteEscolar from '../pages/Main/ComprovanteEscolar';
 import FotoComprovante from '../pages/Main/FotoComprovante';
 import ChooseStationery from '../pages/Main/ChooseStationery';
+import CreateBudget from '../pages/Main/CreateBudget';
 
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Budget from '../pages/Main/Budget';
@@ -156,6 +157,12 @@ export default function Routes() {
 			<MainStack.Screen
 				name='ChooseStationery'
 				component={ChooseStationery}
+				options={{ headerShown: false }}
+			/>
+
+			<MainStack.Screen
+				name='CreateBudget'
+				component={CreateBudget}
 				options={{ headerShown: false }}
 			/>
 		</MainStack.Navigator>
